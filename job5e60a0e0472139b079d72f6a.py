@@ -14,7 +14,7 @@ import json
 
 try: 
 	PipelineNotification.PipelineNotification().started_notification('5e60a0e0472139b079d72f6b','5e58ebb7957f3f13254389b5','http://23.99.85.149:3200/pipeline/notify')
-	Pchurn2_DBFS = DBFSConnector.DBFSConnector.fetch([], {}, "5e60a0e0472139b079d72f6b", spark, "{'url': '/Demo/PredictiveChurnTrain.csv', 'file_type': 'Delimeted', 'dbfs_token': 'dapi4e25a68c235c40145c5053e6ee2a8ed9', 'dbfs_domain': 'westus.azuredatabricks.net', 'delimiter': ',', 'is_header': 'Use Header Line'}")
+	Pchurn2_DBFS = DBFSConnector.DBFSConnector.fetch([], {}, "5e60a0e0472139b079d72f6b", spark, "{'url': '/Demo/PredictiveChurnTrain.csv', 'file_type': 'Delimeted', 'dbfs_token': 'dapi44999843da7d3a23cf90fd336c0bc37b', 'dbfs_domain': 'westus.azuredatabricks.net', 'delimiter': ',', 'is_header': 'Use Header Line'}")
 
 	PipelineNotification.PipelineNotification().completed_notification('5e60a0e0472139b079d72f6b','5e58ebb7957f3f13254389b5','http://23.99.85.149:3200/pipeline/notify')
 except Exception as ex: 
@@ -30,7 +30,7 @@ except Exception as ex:
 	sys.exit(1)
 try: 
 	PipelineNotification.PipelineNotification().started_notification('5e60a0e0472139b079d72f6d','5e58ebb7957f3f13254389b5','http://23.99.85.149:3200/pipeline/notify')
-	Pchurn2_AutoML = tpot_execution.Tpot_execution.run(["5e60a0e0472139b079d72f6c"],{"5e60a0e0472139b079d72f6c": Pchurn2_AutoFE}, "5e60a0e0472139b079d72f6d", spark,json.dumps( {"model_type": "classification", "label": "Churn", "features": ["State", "Account_Length", "Area_Code", "Phone", "Intl_Plan", "VMail_Plan", "VMail_Message", "Day_Mins", "Day_Calls", "Day_Charge", "Eve_Mins", "Eve_Calls", "Eve_Charge", "Night_Mins", "Night_Calls", "Night_Charge", "Intl_Mins", "total_Mins", "Intl_Calls", "Intl_Charge", "Total_Charge", "CustServ_Calls", "cluster_labels"], "percentage": "10", "executionTime": "5", "sampling": "1", "sampling_value": "over", "run_id": "e9c7beddcb5243578ed31e15c0702e34", "ProjectName": "Retail Scenarios", "PipelineName": "Pchurn2", "pipelineId": "5e60a0e0472139b079d72f6a", "userid": "5e58ebb7957f3f13254389b5", "runid": "", "url_ResultView": "http://23.99.85.149:3200", "experiment_id": "2341748169460103"}))
+	Pchurn2_AutoML = tpot_execution.Tpot_execution.run(["5e60a0e0472139b079d72f6c"],{"5e60a0e0472139b079d72f6c": Pchurn2_AutoFE}, "5e60a0e0472139b079d72f6d", spark,json.dumps( {"model_type": "classification", "label": "Churn", "features": ["State", "Account_Length", "Area_Code", "Phone", "Intl_Plan", "VMail_Plan", "VMail_Message", "Day_Mins", "Day_Calls", "Day_Charge", "Eve_Mins", "Eve_Calls", "Eve_Charge", "Night_Mins", "Night_Calls", "Night_Charge", "Intl_Mins", "total_Mins", "Intl_Calls", "Intl_Charge", "Total_Charge", "CustServ_Calls", "cluster_labels"], "percentage": "60", "executionTime": "5", "sampling": "1", "sampling_value": "over", "run_id": "", "model_id": "5e60bf36472139b079d73019", "ProjectName": "Retail Scenarios", "PipelineName": "Pchurn2", "pipelineId": "5e60a0e0472139b079d72f6a", "userid": "5e58ebb7957f3f13254389b5", "runid": "", "url_ResultView": "http://23.99.85.149:3200", "experiment_id": "2341748169460103"}))
 
 	PipelineNotification.PipelineNotification().completed_notification('5e60a0e0472139b079d72f6d','5e58ebb7957f3f13254389b5','http://23.99.85.149:3200/pipeline/notify')
 except Exception as ex: 
